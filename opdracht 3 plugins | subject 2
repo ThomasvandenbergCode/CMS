@@ -1,0 +1,14 @@
+/*  Dit is de hook naam: */
+function wpdocs_theme_name_scripts() {
+
+    /* dit voegt de naam van de style file en het bestand zelf  */
+    wp_enqueue_style( 'style-name', get_stylesheet_uri() );
+    
+    /*  Hier wordt de naam van een script file gekoppeld */
+    wp_enqueue_script( 'script-name', get_template_directory_uri() . '/js/example.js', array(), '1.0.0', true );
+    
+    
+}
+
+/*  Hier worden de actions samengevoegd en gepushed */
+add_action( 'wp_enqueue_scripts', 'wpdocs_theme_name_scripts' );
